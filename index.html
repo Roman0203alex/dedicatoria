@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Para Ti 💜</title>
+
+  <style>
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: linear-gradient(135deg, #0b0b0f, #2b0a3d, #0a1e3f);
+      font-family: 'Segoe UI', sans-serif;
+      color: #eae6ff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+
+    .card {
+      background: rgba(0, 0, 0, 0.55);
+      padding: 30px 25px;
+      border-radius: 20px;
+      max-width: 380px;
+      box-shadow: 0 0 30px rgba(138, 43, 226, 0.4);
+      animation: aparecer 1.5s ease;
+    }
+
+    h1 {
+      color: #b77bff;
+      margin-bottom: 15px;
+    }
+
+    p {
+      line-height: 1.6;
+      font-size: 16px;
+    }
+
+    .boton {
+      margin-top: 20px;
+      padding: 12px 22px;
+      border: none;
+      border-radius: 25px;
+      background: linear-gradient(90deg, #6a00ff, #0059ff);
+      color: white;
+      font-size: 15px;
+      cursor: pointer;
+      box-shadow: 0 0 15px rgba(0, 89, 255, 0.6);
+    }
+
+    .boton:hover {
+      transform: scale(1.05);
+    }
+
+    footer {
+      margin-top: 18px;
+      font-size: 13px;
+      color: #c6bfff;
+    }
+
+    @keyframes aparecer {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="card">
+    <h1>Para alguien especial 💜</h1>
+
+    <p>
+      Quise hacer algo diferente, algo sencillo pero con mucho significado.  
+      Esta pequeña página es solo una forma de decirte que tu amistad
+      es importante para mí y que siempre deseo verte sonreír.
+    </p>
+
+    <p>
+      Gracias por estar, por escuchar y por hacer mis días un poco mejores.
+    </p>
+
+    <!-- Música -->
+    <audio id="musica" src="musica.mp3"></audio>
+
+    <button class="boton" onclick="document.getElementById('musica').play()">
+      ▶️ Reproducir música
+    </button>
+
+    <footer>
+      Hecho con cariño ✨
+    </footer>
+  </div>
+
+</body>
+</html>
