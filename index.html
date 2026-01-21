@@ -8,61 +8,62 @@
   <style>
     body {
       margin: 0;
-      min-height: 100vh;
-      background: linear-gradient(135deg, #0b0b0f, #2b0a3d, #0a1e3f);
       font-family: 'Segoe UI', sans-serif;
-      color: #eae6ff;
+      background: linear-gradient(135deg, #000000, #2b0a3d, #0a1e3f);
+      color: #f0eaff;
+    }
+
+    .pantalla {
+      min-height: 100vh;
       display: flex;
+      flex-direction: column;
       justify-content: center;
       align-items: center;
       text-align: center;
-    }
-
-    .card {
-      background: rgba(0, 0, 0, 0.55);
-      padding: 30px 25px;
-      border-radius: 20px;
-      max-width: 380px;
-      box-shadow: 0 0 30px rgba(138, 43, 226, 0.4);
-      animation: aparecer 1.5s ease;
+      padding: 30px 20px;
     }
 
     h1 {
       color: #b77bff;
-      margin-bottom: 15px;
-    }
-
-    p {
-      line-height: 1.6;
-      font-size: 16px;
     }
 
     .boton {
-      margin-top: 20px;
-      padding: 12px 22px;
+      margin-top: 25px;
+      padding: 14px 26px;
       border: none;
-      border-radius: 25px;
+      border-radius: 30px;
       background: linear-gradient(90deg, #6a00ff, #0059ff);
       color: white;
-      font-size: 15px;
+      font-size: 16px;
       cursor: pointer;
-      box-shadow: 0 0 15px rgba(0, 89, 255, 0.6);
+      box-shadow: 0 0 18px rgba(0, 89, 255, 0.6);
     }
 
-    .boton:hover {
-      transform: scale(1.05);
+    .dedicatoria {
+      display: none;
+      padding: 40px 20px;
+      text-align: center;
+      animation: aparecer 1.5s ease;
     }
 
-    footer {
-      margin-top: 18px;
-      font-size: 13px;
-      color: #c6bfff;
+    .dedicatoria img {
+      width: 90%;
+      max-width: 300px;
+      border-radius: 20px;
+      margin: 20px 0;
+      box-shadow: 0 0 25px rgba(183, 123, 255, 0.5);
+    }
+
+    p {
+      line-height: 1.7;
+      font-size: 17px;
+      margin-bottom: 18px;
     }
 
     @keyframes aparecer {
       from {
         opacity: 0;
-        transform: translateY(20px);
+        transform: translateY(40px);
       }
       to {
         opacity: 1;
@@ -74,30 +75,46 @@
 
 <body>
 
-  <div class="card">
-    <h1>Para alguien especial 💜</h1>
+  <!-- Pantalla inicial -->
+  <div class="pantalla">
+    <h1>Hola 💜</h1>
+    <p>Antes de seguir, toca el botón</p>
 
-    <p>
-      Quise hacer algo diferente, algo sencillo pero con mucho significado.  
-      Esta pequeña página es solo una forma de decirte que tu amistad
-      es importante para mí y que siempre deseo verte sonreír.
-    </p>
-
-    <p>
-      Gracias por estar, por escuchar y por hacer mis días un poco mejores.
-    </p>
-
-    <!-- Música -->
     <audio id="musica" src="musica.mp3"></audio>
 
-    <button class="boton" onclick="document.getElementById('musica').play()">
-      ▶️ Reproducir música
+    <button class="boton" onclick="mostrarDedicatoria()">
+      ▶️ Reproducir
     </button>
-
-    <footer>
-      Hecho con cariño ✨
-    </footer>
   </div>
+
+  <!-- Dedicatoria oculta -->
+  <div class="dedicatoria" id="dedicatoria">
+    <h1>Esto es para ti 💜</h1>
+
+    <p>
+      Quise hacer algo distinto, algo que no se borre con el tiempo.
+      Tal vez no siempre encuentro las palabras, pero esta es una forma
+      sincera de decirte lo importante que eres para mí.
+    </p>
+
+    <img src="foto.jpg" alt="Foto especial">
+
+    <p>
+      Gracias por estar, por escuchar y por ser parte de mi vida.
+      Espero que al leer esto sonrías, aunque sea un poquito ✨
+    </p>
+  </div>
+
+  <script>
+    function mostrarDedicatoria() {
+      const musica = document.getElementById("musica");
+      const dedicatoria = document.getElementById("dedicatoria");
+
+      musica.play();
+      dedicatoria.style.display = "block";
+      dedicatoria.scrollIntoView({ behavior: "smooth" });
+    }
+  </script>
 
 </body>
 </html>
